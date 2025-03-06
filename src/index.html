@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Battleship</title>
+</head>
+<body>
+    <!-- loading screen -->
+    <div class="loading-screen">
+        <img src="./imgs/ship1-01.png" alt="Loading Logo" class="loading-logo">
+        <p>Loading...</p>
+        <div class="progress-container">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+      <!-- win statement container -->
+       <div class="winner-container">
+        <h1 id="winner-text"></h1>
+        <button class="btn" id="btn-playAgain">Play again</button>
+       </div>
+    <div class="startgame-container">
+        <div class="img-container">
+            <img src="./imgs/ship1-01.png" alt="...">
+        </div>
+        <h1>Battleship</h1>
+        <button class="btn" id="btn-game-start">START</button>
+    </div>
+    <div class="modal">
+        <h2>Place ships to start the game.</h2>
+        <div class="modal-content">
+    
+            <div id="playerboard">
+                <!-- append board here -->
+            </div>
+        
+            <div class="draggable-ship-container">
+                    <div class="ships-content">  
+                        <h3>Cruisers</h3>
+                        <div id="ship1" class="ship" draggable="true" data-length="5" data-horizontal="true">
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                        </div>
+                    </div>
+
+                    <div class="ships-content"> 
+                        <h3>Destroyer</h3>
+                        <div id="ship2" class="ship" draggable="true" data-length="4" data-horizontal="true">
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                        </div>
+                    </div>
+
+                    <div class="ships-content"> 
+                        <h3>Frigates</h3>
+                        <div id="ship3" class="ship" draggable="true" data-length="3" data-horizontal="true">
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                        </div>
+                    </div>
+                    <div class="ships-content"> 
+                        <h3>Submarines</h3>
+                        <div id="ship4" class="ship" draggable="true" data-length="2" data-horizontal="true">
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                        </div>
+                    </div>
+                    <div class="ships-content"> 
+                        <h3>Submarines</h3>
+                        <div id="ship5" class="ship" draggable="true" data-length="2" data-horizontal="true">
+                            <div class="ship-cell"></div>
+                            <div class="ship-cell"></div>
+                        </div>
+                    </div>
+            </div>
+     
+        </div>
+        <div class="modal-button">
+            <button id="startGame" class="btn btn-modal" disabled>Start</button>
+            <button id="rotateShipBtn" class="btn rotate-ship">Rotate</button>
+            <button id="resetShip" class="btn btn-modal">Reset</button>
+        </div>
+    </div>
+
+    <!-- main -->
+    <main>
+        <h1>Battleship</h1>
+        <div class="gameboards">
+            <div id="ingame-playerboard-container">
+                <h3>Your board</h3>
+                <div id="ingameboard">
+                    <!-- append board here -->
+                </div>
+            </div>
+            
+            <div id="indicator-container">
+                <div class="cell-info-content">
+                    <div class="cell-info" style="cursor:auto;">
+                        <span>Hit</span>
+                        <div class="cell hit">X</div>
+                    </div>
+                    <div class="cell-info" style="cursor:auto;">
+                        <span>Missed</span>
+                        <div class="cell miss">O</div>
+                    </div>
+                </div>
+                    <h4 id="turnMessage"></h4>
+                <div class="playAgain-container">
+
+                </div>
+            </div>
+            <div id="ingame-enemyboard-container">
+                <h3>Oppenent Board</h3>
+                <div id="computerboard">
+                    <!-- append board here -->
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
